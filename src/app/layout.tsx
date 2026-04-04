@@ -3,6 +3,8 @@ import { Manrope } from "next/font/google";
 import type { ReactNode } from "react";
 import "@/index.css";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+
 const manrope = Manrope({
   subsets: ["latin"],
   display: "swap",
@@ -13,11 +15,13 @@ export const metadata: Metadata = {
   title: "EightyMile Travels | Premium Travel Planning",
   description:
     "Premium travel planning for private movement, corporate travel, and tailored journeys.",
+  ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
   openGraph: {
     title: "EightyMile Travels",
     description:
       "Travel planning for private journeys, corporate movement, and tailored itineraries.",
     type: "website",
+    ...(siteUrl ? { url: siteUrl } : {}),
   },
   twitter: {
     card: "summary_large_image",

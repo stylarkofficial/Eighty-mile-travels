@@ -18,6 +18,16 @@ npm run build
 npm run start
 ```
 
+## Environment
+
+Create a `.env.local` file when you know your live domain:
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
+
+For Vercel, add the same variable in Project Settings -> Environment Variables.
+
 ## Deploy to Vercel
 
 1. Push this project to GitHub, GitLab, or Bitbucket.
