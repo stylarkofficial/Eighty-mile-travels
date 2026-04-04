@@ -5,3 +5,5 @@ out
 coverage
 *.log
 tmp_pdf
+
+.vercel
