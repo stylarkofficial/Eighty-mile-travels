@@ -1,19 +1,52 @@
 import { useState, type FormEvent } from 'react';
 import { motion } from 'framer-motion';
 
+const initialFormData = {
+  name: '',
+  email: '',
+  phone: '',
+  subject: '',
+  message: '',
+  website: '',
+};
+
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
+  const [formData, setFormData] = useState(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-    setTimeout(() => setSubmitted(false), 5000);
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = (await response.json()) as { error?: string };
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Unable to send your message right now.');
+      }
+
+      setSubmitted(true);
+      setFormData(initialFormData);
+      window.setTimeout(() => setSubmitted(false), 5000);
+    } catch (error) {
+      setErrorMessage(
+        error instanceof Error ? error.message : 'Unable to send your message right now.',
+      );
+      setSubmitted(false);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -41,6 +74,18 @@ export default function Contact() {
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <form onSubmit={handleSubmit} className="premium-card p-8 md:p-12">
               <div className="premium-card-content space-y-7">
+                <div className="hidden" aria-hidden="true">
+                  <label htmlFor="website">Website</label>
+                  <input
+                    id="website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={formData.website}
+                    onChange={(e) => setFormData((prev) => ({ ...prev, website: e.target.value }))}
+                  />
+                </div>
+
                 <div className="grid gap-5 md:grid-cols-2">
                   <div>
                     <label className="mb-2 block text-sm text-[color:var(--color-slate-500)]">Your Name</label>
@@ -74,8 +119,20 @@ export default function Contact() {
                   <textarea required rows={5} value={formData.message} onChange={(e) => setFormData((prev) => ({ ...prev, message: e.target.value }))} className="premium-input cursor-text resize-none px-4 py-3" placeholder="Share a few details about the journey you have in mind..." />
                 </div>
 
+                {errorMessage && (
+                  <p className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                    {errorMessage}
+                  </p>
+                )}
+
+                {submitted && (
+                  <p className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-[color:var(--color-slate-700)]">
+                    Message sent successfully. We will get back to you shortly.
+                  </p>
+                )}
+
                 <motion.button type="submit" className="cursor-button premium-button-primary flex w-full items-center justify-center gap-2 py-4 font-semibold" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} disabled={isSubmitting}>
-                  {isSubmitting ? <>Sending...</> : submitted ? <>Message Sent!</> : <>Send Message</>}
+                  {isSubmitting ? <>Sending...</> : <>Send Message</>}
                 </motion.button>
               </div>
             </form>

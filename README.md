@@ -24,9 +24,14 @@ Create a `.env.local` file when you know your live domain:
 
 ```bash
 NEXT_PUBLIC_SITE_URL=https://your-domain.com
+RESEND_API_KEY=re_xxxxxxxxx
+CONTACT_TO_EMAIL=you@example.com
+CONTACT_FROM_EMAIL=EightyMile Travels <onboarding@resend.dev>
 ```
 
 For Vercel, add the same variable in Project Settings -> Environment Variables.
+
+The contact form posts to `app/api/contact/route.ts`. To make email sending work in production, add a valid `RESEND_API_KEY` in Vercel. The default sender uses Resend's onboarding address; when your domain is verified with Resend, replace `CONTACT_FROM_EMAIL` with your branded sender address.
 
 ## Deploy to Vercel
 
