@@ -2,6 +2,10 @@
 
 Premium travel landing page built with Next.js App Router, Tailwind CSS v4, Framer Motion, and React Three Fiber.
 
+For the full production handoff process covering GitHub, Vercel, GoDaddy DNS, and Resend email setup, read:
+
+`DEPLOYMENT-HANDOFF.md`
+
 ## Local development
 
 ```bash
