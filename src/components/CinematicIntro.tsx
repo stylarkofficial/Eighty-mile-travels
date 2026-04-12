@@ -17,7 +17,7 @@ export default function CinematicIntro({ onComplete }: { onComplete: () => void 
         <div className="absolute inset-0 flex items-center justify-center px-6">
           <motion.div className="text-center" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
             <div className="mx-auto mb-8 h-20 w-20 rounded-[2rem] border border-white/12 bg-[rgba(255,255,255,0.08)] shadow-[0_24px_70px_rgba(0,0,0,0.18)]" />
-            <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.36em] text-white/65">EightyMile Travels</p>
+            <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.36em] text-white/65">Eighty Mile Travel</p>
             <h2 className="mb-6 text-4xl font-extrabold tracking-[-0.05em] text-white md:text-6xl">
               Preparing a
               <span className="text-[color:#ffd000]"> refined journey</span>

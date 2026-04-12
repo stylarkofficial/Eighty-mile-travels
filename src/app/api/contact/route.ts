@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 
 const resendApiKey = process.env.RESEND_API_KEY;
-const contactToEmail = process.env.CONTACT_TO_EMAIL || "stylarkofficial@gmail.com";
+const contactToEmail = process.env.CONTACT_TO_EMAIL || "contact@eightymile.co";
 const contactFromEmail =
-  process.env.CONTACT_FROM_EMAIL || "EightyMile Travels <onboarding@resend.dev>";
+  process.env.CONTACT_FROM_EMAIL || "Eighty Mile Travel <onboarding@resend.dev>";
 
 type ContactPayload = {
   name?: string;
@@ -56,7 +56,7 @@ export async function POST(request: Request) {
 
     const html = `
       <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #1f2328;">
-        <h2>New contact enquiry from EightyMile Travels</h2>
+        <h2>New contact enquiry from Eighty Mile Travel</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
@@ -67,7 +67,7 @@ export async function POST(request: Request) {
     `;
 
     const text = [
-      "New contact enquiry from EightyMile Travels",
+      "New contact enquiry from Eighty Mile Travel",
       `Name: ${name}`,
       `Email: ${email}`,
       `Phone: ${phone || "Not provided"}`,

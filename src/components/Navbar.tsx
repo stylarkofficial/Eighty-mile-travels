@@ -52,7 +52,7 @@ export default function Navbar() {
                     <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0011.5 2 1.5 1.5 0 0010 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
                   </svg>
                 </motion.div>
-                <span className="text-2xl font-extrabold tracking-tight text-[color:var(--color-slate-900)]">EightyMile Travels</span>
+                <span className="text-2xl font-extrabold tracking-tight text-[color:var(--color-slate-900)]">Eighty Mile Travel</span>
               </motion.a>
 
               <ul className="hidden items-center gap-1 lg:flex">

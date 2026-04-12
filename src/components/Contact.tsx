@@ -65,9 +65,13 @@ export default function Contact() {
               be shaped with clarity, discretion, and close attention to detail.
             </p>
             <div className="section-copy max-w-lg space-y-3 text-base">
-              <p>Guru Prasadh</p>
-              <p>guruprasadh@gmail.com</p>
-              <p>+91 00000 00000</p>
+              <p>contact@eightymile.co</p>
+              <p>eightymileinfo@gmail.com</p>
+              <p>Eighty Miles: +91 9551758115</p>
+              <div className="pt-4">
+                <p className="font-semibold text-[color:var(--color-slate-900)]">Our Presence :</p>
+                <p>Chennai | Coimbatore | Bangalore | Hyderabad</p>
+              </div>
             </div>
           </motion.div>
 
@@ -89,11 +93,11 @@ export default function Contact() {
                 <div className="grid gap-5 md:grid-cols-2">
                   <div>
                     <label className="mb-2 block text-sm text-[color:var(--color-slate-500)]">Your Name</label>
-                    <input type="text" required value={formData.name} onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))} className="premium-input cursor-text px-4 py-3" placeholder="Guru Prasadh" />
+                    <input type="text" required value={formData.name} onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))} className="premium-input cursor-text px-4 py-3" placeholder="General Name" />
                   </div>
                   <div>
                     <label className="mb-2 block text-sm text-[color:var(--color-slate-500)]">Email Address</label>
-                    <input type="email" required value={formData.email} onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))} className="premium-input cursor-text px-4 py-3" placeholder="guruprasadh@gmail.com" />
+                    <input type="email" required value={formData.email} onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))} className="premium-input cursor-text px-4 py-3" placeholder="general@email.com" />
                   </div>
                 </div>
 

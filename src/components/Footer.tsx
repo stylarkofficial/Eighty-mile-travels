@@ -24,7 +24,7 @@ export default function Footer() {
                     <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0011.5 2 1.5 1.5 0 0010 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
                   </svg>
                 </div>
-                <span className="text-2xl font-extrabold text-[color:var(--color-slate-900)]">EightyMile Travels</span>
+                <span className="text-2xl font-extrabold text-[color:var(--color-slate-900)]">Eighty Mile Travel</span>
               </motion.div>
 
               <p className="max-w-sm text-[color:var(--color-slate-700)]">
@@ -51,7 +51,7 @@ export default function Footer() {
 
         <div className="border-t border-[rgba(67,71,75,0.08)] pt-8">
           <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
-            <div className="text-sm text-[color:var(--color-slate-500)]">&copy; 2023 by EightyMile Travels</div>
+            <div className="text-sm text-[color:var(--color-slate-500)]">&copy; 2023 by Eighty Mile Travel</div>
             <div className="flex flex-wrap justify-center gap-6">
               {['Terms & Conditions', 'Privacy Policy'].map((link) => (
                 <a key={link} href="#" className="text-sm text-[color:var(--color-slate-500)] transition-colors hover:text-[color:var(--color-slate-900)]">
