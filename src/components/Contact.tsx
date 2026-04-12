@@ -70,7 +70,7 @@ export default function Contact() {
               <p>Eighty Miles: +91 9551758115</p>
               <div className="pt-4">
                 <p className="font-semibold text-[color:var(--color-slate-900)]">Our Presence :</p>
-                <p>Chennai | Coimbatore | Bangalore | Hyderabad</p>
+                <p>Chennai | Coimbatore | Bangalore | Hyderabad | UAE | UK | Germany</p>
               </div>
             </div>
           </motion.div>
@@ -93,11 +93,11 @@ export default function Contact() {
                 <div className="grid gap-5 md:grid-cols-2">
                   <div>
                     <label className="mb-2 block text-sm text-[color:var(--color-slate-500)]">Your Name</label>
-                    <input type="text" required value={formData.name} onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))} className="premium-input cursor-text px-4 py-3" placeholder="General Name" />
+                    <input type="text" required value={formData.name} onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))} className="premium-input cursor-text px-4 py-3" placeholder="name" />
                   </div>
                   <div>
                     <label className="mb-2 block text-sm text-[color:var(--color-slate-500)]">Email Address</label>
-                    <input type="email" required value={formData.email} onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))} className="premium-input cursor-text px-4 py-3" placeholder="general@email.com" />
+                    <input type="email" required value={formData.email} onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))} className="premium-input cursor-text px-4 py-3" placeholder="mail@gmail.com" />
                   </div>
                 </div>
 
