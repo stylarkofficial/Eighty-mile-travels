@@ -44,15 +44,16 @@ export default function Navbar() {
                 className="ml-2 flex items-center gap-3 cursor-pointer"
                 whileHover={{ scale: 1.02 }}
               >
-                <motion.div
-                  className="flex h-12 w-12 items-center justify-center rounded-[1.1rem] bg-[#2f3a45] text-white shadow-[0_16px_32px_rgba(47,58,69,0.22)]"
+                <motion.img
+                  src="/logo.png"
+                  alt="Eighty Mile Travel logo"
+                  className="h-12 w-12 object-contain drop-shadow-[0_16px_32px_rgba(47,58,69,0.18)]"
                   whileHover={{ rotate: 8 }}
-                >
-                  <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0011.5 2 1.5 1.5 0 0010 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
-                  </svg>
-                </motion.div>
-                <span className="text-2xl font-extrabold tracking-tight text-[color:var(--color-slate-900)]">Eighty Mile Travel</span>
+                />
+                <span className="flex flex-col leading-none text-[color:var(--color-slate-900)]">
+                  <span className="text-2xl font-extrabold tracking-tight">Eighty Mile</span>
+                  <span className="text-center text-sm font-semibold uppercase tracking-[0.32em] text-[color:var(--color-slate-600)]">Travel</span>
+                </span>
               </motion.a>
 
               <ul className="hidden items-center gap-1 lg:flex">
@@ -109,12 +110,19 @@ export default function Navbar() {
             >
               <motion.a
                 href="#home"
-                className="mr-2 flex h-10 w-10 items-center justify-center rounded-full bg-[#2f3a45] text-white"
-                whileHover={{ rotate: 8, scale: 1.08 }}
+                className="mr-3 flex items-center gap-3 rounded-full px-2 py-1"
+                whileHover={{ scale: 1.03 }}
               >
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0011.5 2 1.5 1.5 0 0010 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
-                </svg>
+                <motion.img
+                  src="/logo.png"
+                  alt="Eighty Mile Travel logo"
+                  className="h-10 w-10 object-contain"
+                  whileHover={{ rotate: 8 }}
+                />
+                <span className="hidden flex-col leading-none text-[color:var(--color-slate-900)] xl:flex">
+                  <span className="text-base font-extrabold tracking-tight">Eighty Mile</span>
+                  <span className="text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-[color:var(--color-slate-600)]">Travel</span>
+                </span>
               </motion.a>
 
               {navItems.map((item) => (

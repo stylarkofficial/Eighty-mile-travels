@@ -12,10 +12,15 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Eighty Mile Travel | Premium Travel Planning",
+  title: "Eighty Mile Travel",
   description:
     "Premium travel planning for private movement, corporate travel, and tailored journeys.",
   ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     title: "Eighty Mile Travel",
     description:

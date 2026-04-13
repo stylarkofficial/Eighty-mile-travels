@@ -70,7 +70,8 @@ export default function Contact() {
               <p>Eighty Miles: +91 9551758115</p>
               <div className="pt-4">
                 <p className="font-semibold text-[color:var(--color-slate-900)]">Our Presence :</p>
-                <p>Chennai | Coimbatore | Bangalore | Hyderabad | UAE | UK | Germany</p>
+                <p>Chennai | Coimbatore | Bangalore | Hyderabad</p>
+                <p>UAE | UK | Germany</p>
               </div>
             </div>
           </motion.div>

@@ -19,12 +19,11 @@ export default function Footer() {
           <div className="grid grid-cols-2 gap-8 md:grid-cols-[1.3fr_repeat(3,minmax(0,1fr))]">
             <div className="col-span-2 md:col-span-1">
               <motion.div className="mb-6 flex items-center gap-3" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-                <div className="flex h-12 w-12 items-center justify-center rounded-[1.1rem] bg-[#2f3a45] text-white">
-                  <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0011.5 2 1.5 1.5 0 0010 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
-                  </svg>
-                </div>
-                <span className="text-2xl font-extrabold text-[color:var(--color-slate-900)]">Eighty Mile Travel</span>
+                <img src="/logo.png" alt="Eighty Mile Travel logo" className="h-12 w-12 object-contain" />
+                <span className="flex flex-col leading-none text-[color:var(--color-slate-900)]">
+                  <span className="text-2xl font-extrabold tracking-tight">Eighty Mile</span>
+                  <span className="text-center text-sm font-semibold uppercase tracking-[0.32em] text-[color:var(--color-slate-600)]">Travel</span>
+                </span>
               </motion.div>
 
               <p className="max-w-sm text-[color:var(--color-slate-700)]">
